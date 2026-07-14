@@ -1,0 +1,9 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" role="img" aria-labelledby="logoTitle">
+  <title id="logoTitle">Logo SD Negeri Cendono</title>
+  <rect width="140" height="140" rx="24" fill="#f8fafc"/>
+  <rect x="18" y="24" width="104" height="92" rx="20" fill="#0d6efd"/>
+  <path d="M34 50h72v20H34z" fill="#fff"/>
+  <path d="M34 76h72v20H34z" fill="#ffc107"/>
+  <circle cx="70" cy="98" r="10" fill="#198754"/>
+  <text x="70" y="125" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="16" font-weight="700" fill="#1d3557">SDNC</text>
+</svg>

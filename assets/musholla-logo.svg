@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 180" role="img" aria-label="Logo Musholla">
+  <rect width="220" height="180" rx="24" fill="#f4f7fb"/>
+  <rect x="56" y="40" width="108" height="90" rx="12" fill="#1f6f4e"/>
+  <path d="M86 74h20v22H86z" fill="#f7c96b"/>
+  <path d="M120 74h20v22h-20z" fill="#f7c96b"/>
+  <path d="M82 98h48v10H82z" fill="#f7c96b"/>
+  <path d="M92 48h28v30H92z" fill="#f7c96b"/>
+  <path d="M102 48h8v30h-8z" fill="#e3a93a"/>
+  <path d="M74 108h68v16H74z" fill="#e3a93a"/>
+  <path d="M96 64l-16 20h32z" fill="#2e8b57"/>
+  <path d="M124 64l16 20h-32z" fill="#2e8b57"/>
+  <circle cx="166" cy="92" r="24" fill="#2e8b57"/>
+  <path d="M166 68l8 12h-16z" fill="#f7c96b"/>
+  <path d="M166 78v28" stroke="#f7c96b" stroke-width="6" stroke-linecap="round"/>
+  <path d="M158 98l16 14 16-14" fill="none" stroke="#f7c96b" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="110" y="152" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#1d4f3c">Musholla</text>
+</svg>

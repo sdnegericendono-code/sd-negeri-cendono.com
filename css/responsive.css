@@ -1,0 +1,10 @@
+/* Small adjustments and print styles */
+@media(max-width:768px){
+  .hero{min-height:56vh}
+  .hero .display-5{font-size:1.8rem}
+}
+
+@media print{
+  header, footer, #toTop, #progress, #loading-screen{display:none}
+  body{background:#fff;color:#000}
+}

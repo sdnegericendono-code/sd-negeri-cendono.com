@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Profil resmi SD Negeri Cendono - Sekolah dasar modern, kreatif dan berkarakter.">
+  <meta name="keywords" content="SD Negeri Cendono, sekolah, pendidikan">
+  <meta property="og:title" content="SD Negeri Cendono">
+  <meta property="og:description" content="Profil resmi SD Negeri Cendono">
+  <title>SD Negeri Cendono</title>
+  <link rel="icon" href="assets/logo.svg">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- AOS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Swiper -->
+  <link href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/responsive.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Loading Screen -->
+<div id="loading-screen" class="loading-screen d-flex flex-column justify-content-center align-items-center">
+  <img src="assets/logo.svg" alt="Logo SD Negeri Cendono" class="mb-3" width="96" height="96">
+  <div class="spinner-border text-primary" role="status" aria-hidden="true"></div>
+  <p class="mt-3">Memuat Website SD Negeri Cendono...</p>
+</div>
+
+<!-- Scroll progress bar -->
+<div id="progress" class="progress fixed-top" style="height:4px"><div id="progress-bar" class="progress-bar bg-primary" style="width:0%"></div></div>
+
+<!-- Navbar -->
+<div id="siteHeader"></div>
+
+<main>
+  <!-- Hero -->
+  <section id="hero" class="hero d-flex align-items-center">
+    <div class="hero-overlay"></div>
+    <div class="container position-relative" data-aos="fade-up">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-white">
+          <img src="assets/logo.svg" alt="logo" width="96" class="mb-3 rounded-circle shadow-sm">
+          <h1 class="display-5 fw-bold" data-key="hero.title" data-editable="true">SD Negeri Cendono</h1>
+          <p class="lead" data-key="hero.subtitle" data-editable="true">"Membangun Generasi Pelajar Pancasila yang Berbudi Luhur, Religius, Berwawasan IPTEK, Tangguh, Kreatif dan Mandiri."</p>
+          <div class="mt-4">
+            <a href="#about" class="btn btn-outline-light me-2 btn-ripple">Profil Sekolah</a>
+            <a href="#contact" class="btn btn-warning text-dark btn-ripple">Hubungi Kami</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator" aria-hidden="true"><i class="bi bi-mouse"></i><span>Scroll</span></div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-5">
+    <div class="container" data-aos="fade-up">
+      <div class="row g-4 align-items-center">
+        <div class="col-md-5">
+          <img id="aboutImage" src="assets/hero.jpg" alt="Foto Sekolah" class="img-fluid rounded shadow-sm lazy" data-key="about.image">
+        </div>
+        <div class="col-md-7">
+          <h3 class="d-flex align-items-center gap-2"><span data-key="about.title" data-editable="true">Profil Singkat</span><button type="button" class="btn btn-sm btn-outline-primary admin-update d-none" data-section="about">Edit</button></h3>
+          <p data-key="about.profile" data-editable="true">Sekolah berkomitmen memberikan layanan pendidikan berkualitas melalui Pembelajaran Mendalam yang menempatkan peserta didik sebagai pembelajar aktif, kreatif, mandiri, dan berkarakter sesuai Profil Pelajar Pancasila.</p>
+          <ul class="list-unstyled">
+            <li><strong>Nama Sekolah:</strong> <span id="idName" data-key="identity.name" data-editable="true">SD Negeri Cendono</span></li>
+            <li><strong>NPSN:</strong> <span id="idNpsn" data-key="identity.npsn" data-editable="true">20512594</span></li>
+            <li><strong>Kecamatan:</strong> <span id="idKec" data-key="identity.kecamatan" data-editable="true">Kandat</span></li>
+            <li><strong>Kabupaten:</strong> <span id="idKab" data-key="identity.kabupaten" data-editable="true">Kediri</span></li>
+            <li><strong>Provinsi:</strong> <span id="idProv" data-key="identity.provinsi" data-editable="true">Jawa Timur</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visi & Misi -->
+  <section id="visi" class="py-5 bg-light">
+    <div class="container" data-aos="fade-up">
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="card p-4 shadow-sm h-100">
+            <i class="bi bi-quote fs-1 text-primary"></i>
+            <h4 class="mt-3 d-flex align-items-center gap-2">
+              <span data-key="visi.title" data-editable="true">Visi</span>
+              <button type="button" class="btn btn-sm btn-outline-primary admin-update d-none" data-section="visi">Edit</button>
+            </h4>
+            <p data-key="visi.text" data-editable="true">Terwujudnya Generasi Pelajar Pancasila yang Berbudi Luhur, Religius, Berwawasan IPTEK, Tangguh, Kreatif, dan Mandiri (BERAKSI).</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <h4 class="d-flex align-items-center gap-2">Misi <button type="button" class="btn btn-sm btn-outline-primary admin-update d-none" data-section="visi">Edit</button></h4>
+          <div class="row g-3">
+            <div class="col-sm-6"><div class="card p-3 h-100 hover-card" data-key="misi.1" data-editable="true">Menumbuhkan karakter dan budi luhur.</div></div>
+            <div class="col-sm-6"><div class="card p-3 h-100 hover-card" data-key="misi.2" data-editable="true">Menumbuhkan sikap religius.</div></div>
+            <div class="col-sm-6"><div class="card p-3 h-100 hover-card" data-key="misi.3" data-editable="true">Mengembangkan potensi akademik dan non akademik.</div></div>
+            <div class="col-sm-6"><div class="card p-3 h-100 hover-card" data-key="misi.4" data-editable="true">Menumbuhkan semangat bersaing.</div></div>
+            <div class="col-sm-6"><div class="card p-3 h-100 hover-card" data-key="misi.5" data-editable="true">Pembelajaran kreatif dan inovatif.</div></div>
+            <div class="col-sm-6"><div class="card p-3 h-100 hover-card" data-key="misi.6" data-editable="true">Mengembangkan kemandirian peserta didik.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data Sekolah -->
+  <section id="data" class="py-5 bg-white">
+    <div class="container" data-aos="fade-up">
+      <h4>Data Guru <button type="button" class="btn btn-sm btn-outline-primary admin-update d-none" data-section="data">Edit</button></h4>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead><tr><th>Jenis</th><th>Jumlah</th></tr></thead>
+          <tbody>
+            <tr><td>Kepala Sekolah</td><td><span data-key="data.guru.kepala" data-editable="true">1</span></td></tr>
+            <tr><td>Guru Kelas</td><td><span data-key="data.guru.guruKelas" data-editable="true">6</span></td></tr>
+            <tr><td>Guru PAI</td><td><span data-key="data.guru.pai" data-editable="true">1</span></td></tr>
+            <tr><td>Guru PJOK</td><td><span data-key="data.guru.pjok" data-editable="true">1</span></td></tr>
+            <tr><td>Operator</td><td><span data-key="data.guru.operator" data-editable="true">1</span></td></tr>
+            <tr><td>Penjaga</td><td><span data-key="data.guru.penjaga" data-editable="true">1</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="mt-4">Data Peserta Didik</h4>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead><tr><th>Kelas</th><th>L</th><th>P</th><th>Jumlah</th></tr></thead>
+          <tbody>
+            <tr><td>I</td><td><span data-key="data.peserta.i.l" data-editable="true">1</span></td><td><span data-key="data.peserta.i.p" data-editable="true">7</span></td><td><span data-key="data.peserta.i.jumlah" data-editable="true">8</span></td></tr>
+            <tr><td>II</td><td><span data-key="data.peserta.ii.l" data-editable="true">3</span></td><td><span data-key="data.peserta.ii.p" data-editable="true">5</span></td><td><span data-key="data.peserta.ii.jumlah" data-editable="true">8</span></td></tr>
+            <tr><td>III</td><td><span data-key="data.peserta.iii.l" data-editable="true">6</span></td><td><span data-key="data.peserta.iii.p" data-editable="true">7</span></td><td><span data-key="data.peserta.iii.jumlah" data-editable="true">13</span></td></tr>
+            <tr><td>IV</td><td><span data-key="data.peserta.iv.l" data-editable="true">2</span></td><td><span data-key="data.peserta.iv.p" data-editable="true">4</span></td><td><span data-key="data.peserta.iv.jumlah" data-editable="true">6</span></td></tr>
+            <tr><td>V</td><td><span data-key="data.peserta.v.l" data-editable="true">9</span></td><td><span data-key="data.peserta.v.p" data-editable="true">3</span></td><td><span data-key="data.peserta.v.jumlah" data-editable="true">12</span></td></tr>
+            <tr><td>VI</td><td><span data-key="data.peserta.vi.l" data-editable="true">13</span></td><td><span data-key="data.peserta.vi.p" data-editable="true">8</span></td><td><span data-key="data.peserta.vi.jumlah" data-editable="true">21</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <canvas id="studentsChart" aria-label="Diagram peserta didik" role="img"></canvas>
+        </div>
+        <div class="col-md-6">
+          <ul class="list-unstyled">
+            <li><strong>Total Laki-laki:</strong> <span data-key="data.peserta.total.l" data-editable="true">34</span></li>
+            <li><strong>Total Perempuan:</strong> <span data-key="data.peserta.total.p" data-editable="true">34</span></li>
+            <li><strong>Total:</strong> <span data-key="data.peserta.total.jumlah" data-editable="true">68</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sarana -->
+  <section id="sarana" class="py-5 bg-light">
+    <div class="container" data-aos="fade-up">
+      <h4>Sarana & Prasarana</h4>
+      <div class="row g-3 mt-3">
+        <!-- Repeat items -->
+        <div class="col-6 col-md-3"><div class="card p-3 text-center"><i class="bi bi-journal-text fs-2"></i><div class="mt-2" data-key="sarana.1" data-editable="true">Ruang Kelas</div></div></div>
+        <div class="col-6 col-md-3"><div class="card p-3 text-center"><i class="bi bi-people fs-2"></i><div class="mt-2" data-key="sarana.2" data-editable="true">Ruang Guru</div></div></div>
+        <div class="col-6 col-md-3"><div class="card p-3 text-center"><i class="bi bi-heart-pulse fs-2"></i><div class="mt-2" data-key="sarana.3" data-editable="true">UKS</div></div></div>
+        <div class="col-6 col-md-3"><div class="card p-3 text-center"><div class="fs-2" aria-hidden="true">🕌</div><div class="mt-2" data-key="sarana.4" data-editable="true">Musholla</div></div></div>
+        <div class="col-6 col-md-3"><div class="card p-3 text-center"><i class="bi bi-shop fs-2"></i><div class="mt-2" data-key="sarana.5" data-editable="true">Kantin</div></div></div>
+        <div class="col-6 col-md-3"><div class="card p-3 text-center"><i class="bi bi-box-seam fs-2"></i><div class="mt-2" data-key="sarana.6" data-editable="true">Gudang</div></div></div>
+        <div class="col-6 col-md-3"><div class="card p-3 text-center"><i class="bi bi-tree fs-2"></i><div class="mt-2" data-key="sarana.7" data-editable="true">Halaman Upacara</div></div></div>
+        <div class="col-6 col-md-3"><div class="card p-3 text-center"><i class="bi bi-wifi fs-2"></i><div class="mt-2" data-key="sarana.8" data-editable="true">Internet</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Unggulan -->
+  <section id="program" class="py-5">
+    <div class="container" data-aos="fade-up">
+      <h4 class="d-flex align-items-center gap-2">Program Unggulan <button type="button" class="btn btn-sm btn-outline-primary admin-update d-none" data-section="program">Edit</button></h4>
+      <div class="row g-3 mt-3">
+        <div class="col-md-3"><div class="card p-3 hover-card" data-key="program.1" data-editable="true">Literasi Pagi</div></div>
+        <div class="col-md-3"><div class="card p-3 hover-card" data-key="program.2" data-editable="true">Gerakan Peduli Sampah</div></div>
+        <div class="col-md-3"><div class="card p-3 hover-card" data-key="program.3" data-editable="true">Budaya Antri</div></div>
+        <div class="col-md-3"><div class="card p-3 hover-card" data-key="program.4" data-editable="true">Sholat Dzuhur Berjamaah</div></div>
+        <div class="col-md-3"><div class="card p-3 hover-card" data-key="program.5" data-editable="true">Sekolah Religi</div></div>
+        <div class="col-md-3"><div class="card p-3 hover-card" data-key="program.6" data-editable="true">Mini School Garden</div></div>
+        <div class="col-md-3"><div class="card p-3 hover-card" data-key="program.7" data-editable="true">Rebana</div></div>
+        <div class="col-md-3"><div class="card p-3 hover-card" data-key="program.8" data-editable="true">Gerakan 7 KAIH</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Standar Pelayanan -->
+  <section id="standar" class="py-5 bg-light">
+    <div class="container" data-aos="fade-up">
+      <h4>Standar Pelayanan</h4>
+      <p>Informasi layanan sekolah dapat dilihat pada halaman Standar Pelayanan kami.</p>
+      <a href="standar.html" class="btn btn-outline-primary">Lihat Standar Pelayanan</a>
+    </div>
+  </section>
+
+  <!-- Ekstrakurikuler -->
+  <section id="ekstrakurikuler" class="py-5">
+    <div class="container" data-aos="fade-up">
+      <h4 class="mt-4">Ekstrakurikuler</h4>
+      <div class="d-flex gap-3 flex-wrap mt-2">
+        <div class="badge bg-primary" data-key="ekstra.1" data-editable="true">Pramuka</div>
+        <div class="badge bg-secondary" data-key="ekstra.2" data-editable="true">Rebana</div>
+        <div class="badge bg-success" data-key="ekstra.3" data-editable="true">Olahraga</div>
+        <div class="badge bg-warning text-dark" data-key="ekstra.4" data-editable="true">Seni</div>
+        <div class="badge bg-info text-dark" data-key="ekstra.5" data-editable="true">Keagamaan</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeri -->
+  <section id="galeri" class="py-5 bg-white">
+    <div class="container" data-aos="fade-up">
+      <h4 class="d-flex align-items-center gap-2"><span data-key="gallery.title" data-editable="true">Galeri</span><button type="button" class="btn btn-sm btn-outline-primary admin-update d-none" data-section="gallery">Edit</button></h4>
+      <div class="masonry mt-3">
+        <img src="images/gallery1.jpg" class="masonry-item rounded" loading="lazy" alt="galeri1">
+        <img src="images/gallery2.jpg" class="masonry-item rounded" loading="lazy" alt="galeri2">
+        <img src="images/gallery3.jpg" class="masonry-item rounded" loading="lazy" alt="galeri3">
+        <img src="images/gallery4.jpg" class="masonry-item rounded" loading="lazy" alt="galeri4">
+        <img src="images/gallery5.jpg" class="masonry-item rounded" loading="lazy" alt="galeri5">
+        <img src="images/gallery6.jpg" class="masonry-item rounded" loading="lazy" alt="galeri6">
+        <img src="images/gallery7.jpg" class="masonry-item rounded" loading="lazy" alt="galeri7">
+        <img src="images/gallery8.jpg" class="masonry-item rounded" loading="lazy" alt="galeri8">
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-5 bg-light">
+    <div class="container" data-aos="fade-up">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <h5 class="d-flex align-items-center gap-2"><span data-key="contact.title" data-editable="true">Kontak</span><button type="button" class="btn btn-sm btn-outline-primary admin-update d-none" data-section="contact">Edit</button></h5>
+          <p>Alamat: <span data-key="contact.address" data-editable="true">Jl. Raya Kediri-Blitar No.12</span></p>
+          <p>Telepon: <span data-key="contact.phone" data-editable="true">(0354) 7440071</span></p>
+          <p>Email: <a id="contactEmail" href="mailto:sd.negeri.cendono@gmail.com" data-key="contact.email" data-editable="true">sd.negeri.cendono@gmail.com</a></p>
+        </div>
+        <div class="col-md-6">
+          <h5>Form Kontak</h5>
+          <form id="contactForm">
+            <div class="mb-2"><input class="form-control" type="text" placeholder="Nama" required></div>
+            <div class="mb-2"><input class="form-control" type="email" placeholder="Email" required></div>
+            <div class="mb-2"><textarea class="form-control" rows="4" placeholder="Pesan" required></textarea></div>
+            <button class="btn btn-primary btn-ripple" type="submit">Kirim</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<div id="siteFooter"></div>
+
+<!-- Scroll to top -->
+<button id="toTop" class="btn btn-primary btn-lg rounded-circle" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>
+
+<!-- Lightbox Modal -->
+<div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-fullscreen"><div class="modal-content bg-transparent border-0"><div class="modal-body d-flex justify-content-center align-items-center p-0"><img src="#" id="lightboxImg" class="img-fluid" alt="Lightbox"></div></div></div></div>
+
+<!-- Editor & Gallery Upload Modal -->
+<div class="modal fade" id="editorModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Editor Konten & Upload Galeri</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="siteEditor">
+          <div id="genericEditorFields">
+            <div class="mb-3">
+              <label class="form-label">Judul Sekolah</label>
+              <input type="text" id="editTitle" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Subjudul / Motto</label>
+              <textarea id="editSubtitle" class="form-control" rows="2"></textarea>
+            </div>
+            <div class="row">
+              <div class="col-md-4 mb-3"><label class="form-label">NPSN</label><input id="editNpsn" class="form-control"></div>
+              <div class="col-md-4 mb-3"><label class="form-label">Kecamatan</label><input id="editKec" class="form-control"></div>
+              <div class="col-md-4 mb-3"><label class="form-label">Kabupaten</label><input id="editKab" class="form-control"></div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Alamat</label>
+              <input type="text" id="editAddress" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Upload Logo (header/footer)</label>
+              <input type="file" id="logoUpload" class="form-control" accept="image/*">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Upload Foto About</label>
+              <input type="file" id="aboutImageUpload" class="form-control" accept="image/*">
+            </div>
+            <div class="mb-3">
+              <button id="toggleInlineEdit" type="button" class="btn btn-sm btn-outline-primary">Toggle Inline Edit</button>
+            </div>
+          </div>
+
+          <div id="sectionUpdateForm" class="d-none">
+            <div class="mb-3">
+              <h6 id="sectionUpdateTitle">Edit Data Seksi</h6>
+            </div>
+            <div class="section-panel d-none" id="panel-visi">
+              <div class="mb-3"><label class="form-label">Judul Visi</label><input id="sectionVisiTitle" class="form-control"></div>
+              <div class="mb-3"><label class="form-label">Teks Visi</label><textarea id="sectionVisiText" class="form-control" rows="3"></textarea></div>
+              <div class="row gy-2">
+                <div class="col-md-6"><label class="form-label">Misi 1</label><input id="sectionMisi1" class="form-control"></div>
+                <div class="col-md-6"><label class="form-label">Misi 2</label><input id="sectionMisi2" class="form-control"></div>
+                <div class="col-md-6"><label class="form-label">Misi 3</label><input id="sectionMisi3" class="form-control"></div>
+                <div class="col-md-6"><label class="form-label">Misi 4</label><input id="sectionMisi4" class="form-control"></div>
+                <div class="col-md-6"><label class="form-label">Misi 5</label><input id="sectionMisi5" class="form-control"></div>
+                <div class="col-md-6"><label class="form-label">Misi 6</label><input id="sectionMisi6" class="form-control"></div>
+              </div>
+            </div>
+            <div class="section-panel d-none" id="panel-data">
+              <div class="row gy-2">
+                <div class="col-md-4"><label class="form-label">Kepala Sekolah</label><input id="sectionGuruKepala" class="form-control"></div>
+                <div class="col-md-4"><label class="form-label">Guru Kelas</label><input id="sectionGuruKelas" class="form-control"></div>
+                <div class="col-md-4"><label class="form-label">Guru PAI</label><input id="sectionGuruPai" class="form-control"></div>
+                <div class="col-md-4"><label class="form-label">Guru PJOK</label><input id="sectionGuruPjok" class="form-control"></div>
+                <div class="col-md-4"><label class="form-label">Operator</label><input id="sectionGuruOperator" class="form-control"></div>
+                <div class="col-md-4"><label class="form-label">Penjaga</label><input id="sectionGuruPenjaga" class="form-control"></div>
+                <div class="col-md-4"><label class="form-label">Kelas I Laki-laki</label><input id="sectionPesertaIL" class="form-control"></div>
+                <div class="col-md-4"><label class="form-label">Kelas I Perempuan</label><input id="sectionPesertaIP" class="form-control"></div>
+                <div class="col-md-4"><label class="form-label">Kelas I Jumlah</label><input id="sectionPesertaIJumlah" class="form-control"></div>
+                <div class="col-md-4"><label class="form-label">Kelas II Laki-laki</label><input id="sectionPesertaIIL" class="form-control"></div>
+                <div class="col-md-4"><label class="form-label">Kelas II Perempuan</label><input id="sectionPesertaIIP" class="form-control"></div>
+                <div class="col-md-4"><label class="form-label">Kelas II Jumlah</label><input id="sectionPesertaIIJumlah" class="form-control"></div>
+                <div class="col-md-4"><label class="form-label">Kelas III Laki-laki</label><input id="sectionPesertaIIIL" class="form-control"></div>
+                <div class="col-md-4"><label class="form-label">Kelas III Perempuan</label><input id="sectionPesertaIIIP" class="form-control"></div>
+                <div class="col-md-4"><label class="form-label">Kelas III Jumlah</label><input id="sectionPesertaIIIJumlah" class="form-control"></div>
+                <div class="col-md-4"><label class="form-label">Kelas IV Laki-laki</label><input id="sectionPesertaIVL" class="form-control"></div>
+                <div class="col-md-4"><label class="form-label">Kelas IV Perempuan</label><input id="sectionPesertaIVP" class="form-control"></div>
+                <div class="col-md-4"><label class="form-label">Kelas IV Jumlah</label><input id="sectionPesertaIVJumlah" class="form-control"></div>
+                <div class="col-md-4"><label class="form-label">Kelas V Laki-laki</label><input id="sectionPesertaVL" class="form-control"></div>
+                <div class="col-md-4"><label class="form-label">Kelas V Perempuan</label><input id="sectionPesertaVP" class="form-control"></div>
+                <div class="col-md-4"><label class="form-label">Kelas V Jumlah</label><input id="sectionPesertaVJumlah" class="form-control"></div>
+                <div class="col-md-4"><label class="form-label">Kelas VI Laki-laki</label><input id="sectionPesertaVIL" class="form-control"></div>
+                <div class="col-md-4"><label class="form-label">Kelas VI Perempuan</label><input id="sectionPesertaVIP" class="form-control"></div>
+                <div class="col-md-4"><label class="form-label">Kelas VI Jumlah</label><input id="sectionPesertaVIJumlah" class="form-control"></div>
+                <div class="col-md-4"><label class="form-label">Total Laki-laki</label><input id="sectionPesertaTotalL" class="form-control"></div>
+                <div class="col-md-4"><label class="form-label">Total Perempuan</label><input id="sectionPesertaTotalP" class="form-control"></div>
+                <div class="col-md-4"><label class="form-label">Total Jumlah</label><input id="sectionPesertaTotalJumlah" class="form-control"></div>
+              </div>
+            </div>
+            <div class="section-panel d-none" id="panel-about">
+              <div class="row gy-3">
+                <div class="col-md-12"><label class="form-label">Judul About</label><input id="sectionAboutTitle" class="form-control"></div>
+                <div class="col-md-12"><label class="form-label">Teks Profil Singkat</label><textarea id="sectionAboutProfile" class="form-control" rows="3"></textarea></div>
+              </div>
+            </div>
+            <div class="section-panel d-none" id="panel-contact">
+              <div class="row gy-3">
+                <div class="col-md-6"><label class="form-label">Judul Kontak</label><input id="sectionContactTitle" class="form-control"></div>
+                <div class="col-md-6"><label class="form-label">Telepon</label><input id="sectionContactPhone" class="form-control"></div>
+                <div class="col-md-6"><label class="form-label">Email</label><input id="sectionContactEmail" class="form-control"></div>
+                <div class="col-md-6"><label class="form-label">Website</label><input id="sectionContactWebsite" class="form-control"></div>
+              </div>
+            </div>
+            <div class="section-panel d-none" id="panel-program">
+              <div class="row gy-2">
+                <div class="col-md-6"><label class="form-label">Program 1</label><input id="sectionProgram1" class="form-control"></div>
+                <div class="col-md-6"><label class="form-label">Program 2</label><input id="sectionProgram2" class="form-control"></div>
+                <div class="col-md-6"><label class="form-label">Program 3</label><input id="sectionProgram3" class="form-control"></div>
+                <div class="col-md-6"><label class="form-label">Program 4</label><input id="sectionProgram4" class="form-control"></div>
+                <div class="col-md-6"><label class="form-label">Program 5</label><input id="sectionProgram5" class="form-control"></div>
+                <div class="col-md-6"><label class="form-label">Program 6</label><input id="sectionProgram6" class="form-control"></div>
+                <div class="col-md-6"><label class="form-label">Program 7</label><input id="sectionProgram7" class="form-control"></div>
+                <div class="col-md-6"><label class="form-label">Program 8</label><input id="sectionProgram8" class="form-control"></div>
+                <div class="col-md-6"><label class="form-label">Ekstra 1</label><input id="sectionExtra1" class="form-control"></div>
+                <div class="col-md-6"><label class="form-label">Ekstra 2</label><input id="sectionExtra2" class="form-control"></div>
+                <div class="col-md-6"><label class="form-label">Ekstra 3</label><input id="sectionExtra3" class="form-control"></div>
+                <div class="col-md-6"><label class="form-label">Ekstra 4</label><input id="sectionExtra4" class="form-control"></div>
+                <div class="col-md-6"><label class="form-label">Ekstra 5</label><input id="sectionExtra5" class="form-control"></div>
+              </div>
+            </div>
+            <div class="section-panel d-none" id="panel-gallery">
+              <div class="mb-3"><label class="form-label">Upload Gambar Galeri (max 8)</label><input type="file" id="sectionGalleryUpload" class="form-control" accept="image/*" multiple></div>
+              <div id="sectionUploadPreview" class="d-flex gap-2 flex-wrap mt-2"></div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between">
+            <div>
+              <button id="exportBtn" type="button" class="btn btn-outline-secondary">Export JSON</button>
+              <input id="importFile" type="file" accept="application/json" class="d-none">
+              <button id="importBtn" type="button" class="btn btn-outline-secondary">Import JSON</button>
+            </div>
+            <div>
+              <button id="resetBtn" type="button" class="btn btn-danger">Reset</button>
+              <button type="submit" class="btn btn-primary">Simpan</button>
+            </div>
+          </div>
+        </form>
+        <hr>
+        <div id="passwordSection" class="d-none">
+          <h6>Ubah Password Admin</h6>
+          <div class="row g-2 align-items-end">
+            <div class="col-md-4">
+              <label class="form-label">Password Saat Ini</label>
+              <input id="currPass" type="password" class="form-control">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Password Baru</label>
+              <input id="newPass" type="password" class="form-control">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Konfirmasi Password</label>
+              <input id="confirmPass" type="password" class="form-control">
+            </div>
+          </div>
+          <div class="mt-2 text-end">
+            <button id="changePassBtn" class="btn btn-warning">Ganti Password</button>
+          </div>
+        </div>
+        <div class="mt-3 d-none" id="adminPassControls">
+          <div class="d-flex gap-2">
+            <button id="toggleShowPass" type="button" class="btn btn-outline-info">Lihat Password</button>
+            <button id="resetDefaultPass" type="button" class="btn btn-outline-danger">Reset ke Default</button>
+            <button id="clearStoredPass" type="button" class="btn btn-outline-secondary">Hapus Password Tersimpan</button>
+          </div>
+          <div id="currentPassDisplay" class="mt-2 d-none"><input id="currentPassText" class="form-control" readonly></div>
+          <div class="small text-muted mt-2">Password default: <strong>admin123</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Admin Login Modal -->
+<div class="modal fade" id="adminModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title">Admin Login</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body">
+        <form id="adminForm">
+          <div class="mb-3"><label class="form-label">Password</label><input id="adminPassword" type="password" class="form-control" required></div>
+          <div class="d-flex justify-content-between">
+            <button type="button" id="adminCancel" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+            <button type="submit" class="btn btn-primary">Masuk</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script>
+  function includeSharedLayout(){
+    const headerTarget = document.getElementById('siteHeader');
+    const footerTarget = document.getElementById('siteFooter');
+    if (headerTarget) {
+      fetch('components/header.html')
+        .then(res => res.text())
+        .then(html => { headerTarget.innerHTML = html; });
+    }
+    if (footerTarget) {
+      fetch('components/footer.html')
+        .then(res => res.text())
+        .then(html => { footerTarget.innerHTML = html; });
+    }
+  }
+  includeSharedLayout();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<!-- CounterUp dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/waypoints/lib/noframework.waypoints.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/counterup2@2.0.2/dist/index.min.js"></script>
+
+<script src="js/counter.js"></script>
+<script src="js/darkmode.js"></script>
+<script src="js/script.js"></script>
+<script>
+  AOS.init({once:true,duration:800});
+</script>
+</body>
+</html>
