@@ -56,7 +56,6 @@
         </div>
       </div>
     </div>
-    <div class="scroll-indicator" aria-hidden="true"><i class="bi bi-mouse"></i><span>Scroll</span></div>
   </section>
 
   <!-- About -->
@@ -205,13 +204,58 @@
   <!-- Ekstrakurikuler -->
   <section id="ekstrakurikuler" class="py-5">
     <div class="container" data-aos="fade-up">
-      <h4 class="mt-4">Ekstrakurikuler</h4>
-      <div class="d-flex gap-3 flex-wrap mt-2">
-        <div class="badge bg-primary" data-key="ekstra.1" data-editable="true">Pramuka</div>
-        <div class="badge bg-secondary" data-key="ekstra.2" data-editable="true">Rebana</div>
-        <div class="badge bg-success" data-key="ekstra.3" data-editable="true">Olahraga</div>
-        <div class="badge bg-warning text-dark" data-key="ekstra.4" data-editable="true">Seni</div>
-        <div class="badge bg-info text-dark" data-key="ekstra.5" data-editable="true">Keagamaan</div>
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <h4 class="mt-4">Ekstrakurikuler</h4>
+        <button type="button" class="btn btn-sm btn-outline-primary admin-update d-none" data-section="program">Edit</button>
+      </div>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="card p-4 h-100">
+            <h5 class="fw-bold mb-2" data-key="ekstra.1" data-editable="true">Pramuka</h5>
+            <p class="text-muted mb-2" data-key="ekstra.1.schedule" data-editable="true">Sabtu</p>
+            <p data-key="ekstra.1.desc" data-editable="true">Pramuka mengajarkan kedisiplinan, kepemimpinan, dan kecakapan hidup melalui kegiatan alam dan kepramukaan.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card p-4 h-100">
+            <h5 class="fw-bold mb-2" data-key="ekstra.2" data-editable="true">Rebana</h5>
+            <p class="text-muted mb-2" data-key="ekstra.2.schedule" data-editable="true">Rabu</p>
+            <p data-key="ekstra.2.desc" data-editable="true">Rebana membina kreativitas seni musik islami dan kerja tim melalui latihan vokal dan permainan alat musik.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card p-4 h-100">
+            <h5 class="fw-bold mb-2" data-key="ekstra.3" data-editable="true">Komputer</h5>
+            <p class="text-muted mb-2" data-key="ekstra.3.schedule" data-editable="true">Sabtu</p>
+            <p data-key="ekstra.3.desc" data-editable="true">Ekstrakurikuler komputer memperkenalkan dasar pemrograman, multimedia, dan literasi digital untuk siswa.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card p-4 h-100">
+            <h5 class="fw-bold mb-2" data-key="ekstra.4" data-editable="true">Tari</h5>
+            <p class="text-muted mb-2" data-key="ekstra.4.schedule" data-editable="true">Senin</p>
+            <p data-key="ekstra.4.desc" data-editable="true">Ekstrakurikuler tari mengembangkan gerak artistik, koordinasi tubuh, dan rasa percaya diri lewat tarian tradisional dan modern.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pengumuman Harian -->
+  <section id="announcement" class="py-5 bg-light">
+    <div class="container" data-aos="fade-up">
+      <div class="row g-4">
+        <div class="col-md-12">
+          <h4 class="d-flex align-items-center gap-2">
+            <span data-key="announcement.title" data-editable="true">Pengumuman Harian</span>
+            <button type="button" class="btn btn-sm btn-outline-primary admin-update d-none" data-section="announcement">Edit</button>
+          </h4>
+          <p class="text-muted mb-3" data-key="announcement.date" data-editable="true">2026-01-01</p>
+          <div class="card p-4 shadow-sm">
+            <img id="announcementImage" class="img-fluid rounded mb-3 d-none" alt="Foto Pengumuman">
+            <p data-key="announcement.text" data-editable="true">Tidak ada pengumuman hari ini. Silakan cek kembali nanti.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -379,11 +423,26 @@
                 <div class="col-md-6"><label class="form-label">Program 7</label><input id="sectionProgram7" class="form-control"></div>
                 <div class="col-md-6"><label class="form-label">Program 8</label><input id="sectionProgram8" class="form-control"></div>
                 <div class="col-md-6"><label class="form-label">Ekstra 1</label><input id="sectionExtra1" class="form-control"></div>
+                <div class="col-md-6"><label class="form-label">Jadwal Pramuka</label><input id="sectionExtra1Schedule" class="form-control"></div>
+                <div class="col-md-12"><label class="form-label">Deskripsi Pramuka</label><textarea id="sectionExtra1Desc" class="form-control" rows="2"></textarea></div>
                 <div class="col-md-6"><label class="form-label">Ekstra 2</label><input id="sectionExtra2" class="form-control"></div>
+                <div class="col-md-6"><label class="form-label">Jadwal Rebana</label><input id="sectionExtra2Schedule" class="form-control"></div>
+                <div class="col-md-12"><label class="form-label">Deskripsi Rebana</label><textarea id="sectionExtra2Desc" class="form-control" rows="2"></textarea></div>
                 <div class="col-md-6"><label class="form-label">Ekstra 3</label><input id="sectionExtra3" class="form-control"></div>
+                <div class="col-md-6"><label class="form-label">Jadwal Komputer</label><input id="sectionExtra3Schedule" class="form-control"></div>
+                <div class="col-md-12"><label class="form-label">Deskripsi Komputer</label><textarea id="sectionExtra3Desc" class="form-control" rows="2"></textarea></div>
                 <div class="col-md-6"><label class="form-label">Ekstra 4</label><input id="sectionExtra4" class="form-control"></div>
+                <div class="col-md-6"><label class="form-label">Jadwal Tari</label><input id="sectionExtra4Schedule" class="form-control"></div>
+                <div class="col-md-12"><label class="form-label">Deskripsi Tari</label><textarea id="sectionExtra4Desc" class="form-control" rows="2"></textarea></div>
                 <div class="col-md-6"><label class="form-label">Ekstra 5</label><input id="sectionExtra5" class="form-control"></div>
               </div>
+            </div>
+            <div class="section-panel d-none" id="panel-announcement">
+              <div class="mb-3"><label class="form-label">Judul Pengumuman</label><input id="sectionAnnouncementTitle" class="form-control"></div>
+              <div class="mb-3"><label class="form-label">Tanggal Pengumuman</label><input id="sectionAnnouncementDate" type="date" class="form-control"></div>
+              <div class="mb-3"><label class="form-label">Isi Pengumuman</label><textarea id="sectionAnnouncementText" class="form-control" rows="4"></textarea></div>
+              <div class="mb-3"><label class="form-label">Foto Pengumuman</label><input id="sectionAnnouncementImageUpload" type="file" accept="image/*" class="form-control"></div>
+              <div id="sectionAnnouncementImagePreview" class="mt-2"></div>
             </div>
             <div class="section-panel d-none" id="panel-gallery">
               <div class="mb-3"><label class="form-label">Upload Gambar Galeri (max 8)</label><input type="file" id="sectionGalleryUpload" class="form-control" accept="image/*" multiple></div>

@@ -65,14 +65,20 @@ document.addEventListener('DOMContentLoaded', function(){
   if(!modalEl) return;
   const modal = new bootstrap.Modal(modalEl);
   const adminModal = new bootstrap.Modal(document.getElementById('adminModal'));
-  const adminBtn = document.getElementById('adminBtn');
   const adminForm = document.getElementById('adminForm');
   const adminPassword = document.getElementById('adminPassword');
 
   // Admin state persisted in sessionStorage
   function isAdmin(){ return sessionStorage.getItem('sdnc-admin')==='1'; }
   function setAdmin(v){ if(v) sessionStorage.setItem('sdnc-admin','1'); else sessionStorage.removeItem('sdnc-admin'); updateAdminUI(); }
-  const adminLogoutBtn = document.getElementById('adminLogout');
+
+  function getAdminButtons(){
+    return {
+      adminBtn: document.getElementById('adminBtn'),
+      adminLogoutBtn: document.getElementById('adminLogout')
+    };
+  }
+
   const passwordSection = document.getElementById('passwordSection');
   const currPass = document.getElementById('currPass');
   const newPass = document.getElementById('newPass');
@@ -84,30 +90,44 @@ document.addEventListener('DOMContentLoaded', function(){
   const clearStoredPass = document.getElementById('clearStoredPass');
   const currentPassDisplay = document.getElementById('currentPassDisplay');
   const currentPassText = document.getElementById('currentPassText');
+
   function updateAdminUI(){
+    const {adminBtn, adminLogoutBtn} = getAdminButtons();
     const updates = document.querySelectorAll('.admin-update');
+    if(!adminBtn || !adminLogoutBtn){ return; }
     if(isAdmin()){ adminBtn.classList.add('btn-success'); adminBtn.innerText='Admin (On)'; adminLogoutBtn.classList.remove('d-none'); updates.forEach(b=>b.classList.remove('d-none')); }
     else { adminBtn.classList.remove('btn-success'); adminBtn.innerText='Admin'; adminLogoutBtn.classList.add('d-none'); updates.forEach(b=>b.classList.add('d-none')); }
   }
-  updateAdminUI();
+
+  function initAdminButtons(){
+    const {adminBtn, adminLogoutBtn} = getAdminButtons();
+    if(!adminBtn || !adminLogoutBtn){
+      setTimeout(initAdminButtons, 50);
+      return;
+    }
+
+    updateAdminUI();
+    adminBtn.addEventListener('click', ()=>{
+      if(isAdmin()){ modal.show(); loadEditor(); return; }
+      adminModal.show();
+    });
+
+    adminLogoutBtn.addEventListener('click', ()=>{ if(confirm('Logout admin?')) setAdmin(false); });
+  }
+  initAdminButtons();
 
   // Default password if none set in localStorage
   const DEFAULT_PASS = 'admin123';
-  function checkPassword(p){ const saved = localStorage.getItem('sdnc-pass') || DEFAULT_PASS; return p === saved; }
-
-  // Admin button opens login modal or toggles logout
-  adminBtn.addEventListener('click', ()=>{
-    if(isAdmin()){ modal.show(); loadEditor(); return; }
-    adminModal.show();
-  });
-
-  adminLogoutBtn.addEventListener('click', ()=>{ if(confirm('Logout admin?')) setAdmin(false); });
+  function checkPassword(p){
+    const saved = localStorage.getItem('sdnc-pass');
+    return p.trim() === (saved ? saved : DEFAULT_PASS);
+  }
 
   let pendingSectionOpen = null;
 
   adminForm.addEventListener('submit', function(e){
     e.preventDefault();
-    const p = adminPassword.value;
+    const p = adminPassword.value.trim();
     if(checkPassword(p)){
       setAdmin(true);
       adminModal.hide();
@@ -202,6 +222,19 @@ document.addEventListener('DOMContentLoaded', function(){
   const sectionExtra3 = document.getElementById('sectionExtra3');
   const sectionExtra4 = document.getElementById('sectionExtra4');
   const sectionExtra5 = document.getElementById('sectionExtra5');
+  const sectionExtra1Schedule = document.getElementById('sectionExtra1Schedule');
+  const sectionExtra2Schedule = document.getElementById('sectionExtra2Schedule');
+  const sectionExtra3Schedule = document.getElementById('sectionExtra3Schedule');
+  const sectionExtra4Schedule = document.getElementById('sectionExtra4Schedule');
+  const sectionExtra1Desc = document.getElementById('sectionExtra1Desc');
+  const sectionExtra2Desc = document.getElementById('sectionExtra2Desc');
+  const sectionExtra3Desc = document.getElementById('sectionExtra3Desc');
+  const sectionExtra4Desc = document.getElementById('sectionExtra4Desc');
+  const sectionAnnouncementTitle = document.getElementById('sectionAnnouncementTitle');
+  const sectionAnnouncementDate = document.getElementById('sectionAnnouncementDate');
+  const sectionAnnouncementText = document.getElementById('sectionAnnouncementText');
+  const sectionAnnouncementImageUpload = document.getElementById('sectionAnnouncementImageUpload');
+  const sectionAnnouncementImagePreview = document.getElementById('sectionAnnouncementImagePreview');
   const sectionAboutTitle = document.getElementById('sectionAboutTitle');
   const sectionAboutProfile = document.getElementById('sectionAboutProfile');
 
@@ -246,6 +279,7 @@ document.addEventListener('DOMContentLoaded', function(){
       if(state.logo) safeSetLogo(state.logo);
       else safeSetLogo('assets/logo.svg');
       if(state.aboutImage) { const ai = document.getElementById('aboutImage'); if(ai) ai.src = state.aboutImage; }
+     if(state.announcementImage){ const ai = document.getElementById('announcementImage'); if(ai){ ai.src = state.announcementImage; ai.classList.remove('d-none'); }}
     } else {
       // defaults from DOM
       editTitle.value = document.querySelector('.navbar-brand .fw-bold')?.innerText || '';
@@ -272,6 +306,7 @@ document.addEventListener('DOMContentLoaded', function(){
       case 'tujuan': return 'Tujuan Sekolah';
       case 'data': return 'Data Sekolah';
       case 'program': return 'Program & Ekstrakurikuler';
+      case 'announcement': return 'Pengumuman Harian';
       case 'gallery': return 'Galeri';
       case 'about': return 'About';
       case 'contact': return 'Kontak';
@@ -355,7 +390,8 @@ document.addEventListener('DOMContentLoaded', function(){
     );
     if(prefix==='about') selectors.push('[data-key="about.title"]','[data-key="about.profile"]','[data-key="identity.name"]','[data-key="identity.npsn"]','[data-key="identity.kecamatan"]','[data-key="identity.kabupaten"]','[data-key="identity.provinsi"]');
     if(prefix==='contact') selectors.push('[data-key="contact.title"]','[data-key="contact.address"]','[data-key="contact.phone"]','[data-key="contact.email"]','[data-key="contact.website"]');
-    if(prefix==='program') selectors.push('[data-key="program.1"]','[data-key="program.2"]','[data-key="program.3"]','[data-key="program.4"]','[data-key="program.5"]','[data-key="program.6"]','[data-key="program.7"]','[data-key="program.8"]','[data-key="ekstra.1"]','[data-key="ekstra.2"]','[data-key="ekstra.3"]','[data-key="ekstra.4"]','[data-key="ekstra.5"]');
+    if(prefix==='program') selectors.push('[data-key="program.1"]','[data-key="program.2"]','[data-key="program.3"]','[data-key="program.4"]','[data-key="program.5"]','[data-key="program.6"]','[data-key="program.7"]','[data-key="program.8"]','[data-key="ekstra.1"]','[data-key="ekstra.2"]','[data-key="ekstra.3"]','[data-key="ekstra.4"]','[data-key="ekstra.5"]','[data-key="ekstra.1.schedule"]','[data-key="ekstra.2.schedule"]','[data-key="ekstra.3.schedule"]','[data-key="ekstra.4.schedule"]','[data-key="ekstra.1.desc"]','[data-key="ekstra.2.desc"]','[data-key="ekstra.3.desc"]','[data-key="ekstra.4.desc"]');
+    if(prefix==='announcement') selectors.push('[data-key="announcement.title"]','[data-key="announcement.date"]','[data-key="announcement.text"]');
     if(prefix==='gallery') selectors.push('[data-key="gallery.title"]');
     selectors.forEach(sel=>{
       const el = document.querySelector(sel);
@@ -452,6 +488,7 @@ document.addEventListener('DOMContentLoaded', function(){
     if(prefix==='about') keys.push('about.title','about.profile','identity.name','identity.npsn','identity.kecamatan','identity.kabupaten','identity.provinsi');
     if(prefix==='contact') keys.push('contact.title','contact.address','contact.phone','contact.email','contact.website');
     if(prefix==='program') keys.push('program.1','program.2','program.3','program.4','program.5','program.6','program.7','program.8','ekstra.1','ekstra.2','ekstra.3','ekstra.4','ekstra.5');
+    if(prefix==='announcement') keys.push('announcement.title','announcement.date','announcement.text');
     if(prefix==='gallery') keys.push('gallery.title');
     keys.forEach(key=>{
       const el = document.querySelector('[data-key="'+key+'"]'); if(el) state.editable[key] = el.innerHTML;
@@ -528,6 +565,31 @@ document.addEventListener('DOMContentLoaded', function(){
       sectionExtra3.value = editable['ekstra.3'] || document.querySelector('[data-key="ekstra.3"]')?.innerText || '';
       sectionExtra4.value = editable['ekstra.4'] || document.querySelector('[data-key="ekstra.4"]')?.innerText || '';
       sectionExtra5.value = editable['ekstra.5'] || document.querySelector('[data-key="ekstra.5"]')?.innerText || '';
+      sectionExtra1Schedule.value = editable['ekstra.1.schedule'] || document.querySelector('[data-key="ekstra.1.schedule"]')?.innerText || '';
+      sectionExtra2Schedule.value = editable['ekstra.2.schedule'] || document.querySelector('[data-key="ekstra.2.schedule"]')?.innerText || '';
+      sectionExtra3Schedule.value = editable['ekstra.3.schedule'] || document.querySelector('[data-key="ekstra.3.schedule"]')?.innerText || '';
+      sectionExtra4Schedule.value = editable['ekstra.4.schedule'] || document.querySelector('[data-key="ekstra.4.schedule"]')?.innerText || '';
+      sectionExtra1Desc.value = editable['ekstra.1.desc'] || document.querySelector('[data-key="ekstra.1.desc"]')?.innerText || '';
+      sectionExtra2Desc.value = editable['ekstra.2.desc'] || document.querySelector('[data-key="ekstra.2.desc"]')?.innerText || '';
+      sectionExtra3Desc.value = editable['ekstra.3.desc'] || document.querySelector('[data-key="ekstra.3.desc"]')?.innerText || '';
+      sectionExtra4Desc.value = editable['ekstra.4.desc'] || document.querySelector('[data-key="ekstra.4.desc"]')?.innerText || '';
+    }
+    if(prefix==='announcement'){
+      sectionAnnouncementTitle.value = editable['announcement.title'] || document.querySelector('[data-key="announcement.title"]')?.innerText || '';
+      sectionAnnouncementDate.value = editable['announcement.date'] || document.querySelector('[data-key="announcement.date"]')?.innerText || '';
+      sectionAnnouncementText.value = editable['announcement.text'] || document.querySelector('[data-key="announcement.text"]')?.innerText || '';
+      if(sectionAnnouncementImagePreview){
+        sectionAnnouncementImagePreview.innerHTML = '';
+        const imgSrc = state.announcementImage || '';
+        if(imgSrc){
+          const img = document.createElement('img');
+          img.src = imgSrc;
+          img.className = 'img-fluid rounded';
+          img.alt = 'Preview Foto Pengumuman';
+          sectionAnnouncementImagePreview.appendChild(img);
+        }
+      }
+      if(sectionAnnouncementImageUpload) sectionAnnouncementImageUpload.value = '';
     }
     if(prefix==='gallery'){
       if(sectionUploadPreview) sectionUploadPreview.innerHTML = '';
@@ -645,6 +707,32 @@ document.addEventListener('DOMContentLoaded', function(){
          state.editable['ekstra.3'] = sectionExtra3.value;
          state.editable['ekstra.4'] = sectionExtra4.value;
          state.editable['ekstra.5'] = sectionExtra5.value;
+         state.editable['ekstra.1.schedule'] = sectionExtra1Schedule.value;
+         state.editable['ekstra.2.schedule'] = sectionExtra2Schedule.value;
+         state.editable['ekstra.3.schedule'] = sectionExtra3Schedule.value;
+         state.editable['ekstra.4.schedule'] = sectionExtra4Schedule.value;
+         state.editable['ekstra.1.desc'] = sectionExtra1Desc.value;
+         state.editable['ekstra.2.desc'] = sectionExtra2Desc.value;
+         state.editable['ekstra.3.desc'] = sectionExtra3Desc.value;
+         state.editable['ekstra.4.desc'] = sectionExtra4Desc.value;
+       }
+       if(sectionEditing === 'announcement'){
+         state.editable['announcement.title'] = sectionAnnouncementTitle.value;
+         state.editable['announcement.date'] = sectionAnnouncementDate.value;
+         state.editable['announcement.text'] = sectionAnnouncementText.value;
+         if(sectionAnnouncementImageUpload && sectionAnnouncementImageUpload.files.length){
+           const files = Array.from(sectionAnnouncementImageUpload.files).slice(0,1);
+           const read = files.map(f=> new Promise((res)=>{ const r = new FileReader(); r.onload = ()=>res(r.result); r.readAsDataURL(f); }));
+           Promise.all(read).then(imgs=>{
+             state.announcementImage = imgs[0];
+             saveState(state);
+             applyStateToDOM(state);
+             sectionEditing = null;
+             modal.hide();
+             alert('Perubahan pengumuman tersimpan.');
+           }).catch(()=>alert('Gagal memuat foto pengumuman.'));
+           return;
+         }
        }
        if(sectionEditing === 'gallery' && sectionGalleryUpload.files.length){
          const files = Array.from(sectionGalleryUpload.files).slice(0,8);
@@ -781,11 +869,32 @@ document.addEventListener('DOMContentLoaded', function(){
      if(state.editable){ Object.keys(state.editable).forEach(key=>{ const el=document.querySelector('[data-key="'+key+'"]'); if(el) el.innerHTML = state.editable[key]; }); }
      if(state.logo) document.querySelectorAll('[data-key="site.logo"]').forEach(i=>i.src = state.logo);
      if(state.aboutImage) { const ai = document.getElementById('aboutImage'); if(ai) ai.src = state.aboutImage; }
+     if(window.updateStudentChart) window.updateStudentChart();
    }
 
    // apply state on page load
    window.addEventListener('load', ()=>{
      const state = loadState(); if(state){ applyStateToDOM(state); }
+     if(window.updateStudentChart) window.updateStudentChart();
   });
+
+  if(sectionAnnouncementImageUpload){
+    sectionAnnouncementImageUpload.addEventListener('change', function(){
+      const file = this.files[0];
+      if(!file) return;
+      const reader = new FileReader();
+      reader.onload = function(){
+        if(sectionAnnouncementImagePreview){
+          sectionAnnouncementImagePreview.innerHTML = '';
+          const img = document.createElement('img');
+          img.src = reader.result;
+          img.className = 'img-fluid rounded';
+          img.alt = 'Preview Foto Pengumuman';
+          sectionAnnouncementImagePreview.appendChild(img);
+        }
+      };
+      reader.readAsDataURL(file);
+    });
+  }
 
 })();
